@@ -2,21 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AlertModule} from 'ngx-bootstrap/alert';
 import {ModalModule} from 'ngx-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreateDocumentComponent } from './createDocument/createDocument.component';
+import {UcWidgetComponent} from 'ngx-uploadcare-widget';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    CreateDocumentComponent
+    CreateDocumentComponent,
+    UcWidgetComponent
   ],
   imports: [
     BrowserModule,
     AlertModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [

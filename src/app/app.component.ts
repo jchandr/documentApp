@@ -13,8 +13,8 @@ export class AppComponent {
   constructor(private modalService: BsModalService) {}
   openModalWithComponent() {
     const initialState = {
-      name: '',
-      description: '',
+      name: 'Type your Name',
+      description: 'Add Some Description',
       images: [],
       title: 'Create a Document'
     };
