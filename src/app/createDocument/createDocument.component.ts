@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import {HttpClient} from '@angular/common/http';
+import apiHeaders from '../../apiHeaders';
 
 @Component({
   selector: 'app-create-document',
@@ -42,18 +43,12 @@ export class CreateDocumentComponent {
   }
 
   handleSave() {
-    const config = {
-      headers: {
-        'Authorization': 'Bearer 314a1849bfe7a604850922b4de3144aa46b69c5e-90cc387c792d007b67bc055409392c22ee85548c',
-        'Content-Type': 'application/json'
-      }
-    };
     this.http.request(
       'POST',
       'https://alpha-dataflownode.zerionsoftware.com/code_assignment/records',
       {
         headers: {
-          ...config.headers
+          ...apiHeaders
         },
         body: {
           'name': this.inputName,

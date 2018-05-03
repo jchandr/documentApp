@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreateDocumentComponent } from './createDocument/createDocument.component';
 import {UcWidgetComponent} from 'ngx-uploadcare-widget';
+import {ShowcaseComponent} from './showcase/showcase.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CreateDocumentComponent,
-    UcWidgetComponent
+    UcWidgetComponent,
+    ShowcaseComponent
   ],
   imports: [
     BrowserModule,
