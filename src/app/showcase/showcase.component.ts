@@ -1,5 +1,4 @@
-import {Component, Input} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-showcase',
@@ -9,4 +8,9 @@ import {HttpClient} from '@angular/common/http';
 
 export class ShowcaseComponent {
   @Input() public documents;
+  @Output() public deleteDocument: EventEmitter<any> = new EventEmitter();
+
+  handleDelete(id) {
+    this.deleteDocument.emit(id);
+  }
 }

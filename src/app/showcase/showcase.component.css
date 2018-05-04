@@ -1,16 +1,19 @@
-.card-title, .card-text{
-  text-align: left;
-  overflow: -webkit-marquee;
+.showcase-container {
+  margin: 1rem;
+}
+
+.card-img-top {
+  max-height: 20em;
+  max-width: 30em;
+  align-self: center;
 }
 
 .card {
-  margin: 1em;
+  margin: 0.5em;
+  padding: 1rem;
 }
 
-.card-img {
-  width: 4em;
-}
-
-.showcase-container {
-  margin: 1em;
+.card-text {
+  height: 10rem;
+  overflow: hidden;
 }

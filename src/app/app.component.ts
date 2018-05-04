@@ -13,6 +13,13 @@ import apiHeaders from '../apiHeaders';
 export class AppComponent {
   bsModalRef: BsModalRef;
   documents;
+  defaultInitialState: {
+    name: 'Type your Name',
+    description: 'Add Some Description',
+    images: Array<any>,
+    title: 'Create a Document',
+    _id: ''
+  };
 
   constructor(private modalService: BsModalService,
               public http: HttpClient) {
@@ -35,13 +42,31 @@ export class AppComponent {
       });
   }
 
-  openModalWithComponent() {
-    const initialState = {
-      name: 'Type your Name',
-      description: 'Add Some Description',
-      images: [],
-      title: 'Create a Document'
-    };
+  deleteDocument(id) {
+    const deleteUrl = 'https://alpha-dataflownode.zerionsoftware.com/code_assignment/records/'
+      + id;
+    return this.http.delete(
+      deleteUrl,
+      {
+        headers: {
+          ...apiHeaders
+        }
+      }
+    );
+  }
+
+  handleDeleteDocument(e) {
+    this.deleteDocument(e).subscribe(
+      () => {
+        this.setDocuments();
+      },
+      () => {
+        alert('There was a problem deleting document');
+      }
+    );
+  }
+
+  openModalWithComponent(initialState = this.defaultInitialState) {
     this.modalService.onHide = new EventEmitter<any>();
     this.modalService.onHide.subscribe(() => {
       this.setDocuments();

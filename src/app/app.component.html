@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center" (modalClosed) = 'documentCreatedHander($event)'>
+<div style="text-align:center">
   <app-navbar></app-navbar>
   <div class="container">
     <button type="button"
@@ -8,5 +8,6 @@
       <i class="material-icons">add</i>
     </button>
   </div>
-  <app-showcase [documents]="documents"></app-showcase>
+  <app-showcase [documents]="documents"
+  (deleteDocument)="handleDeleteDocument($event)"></app-showcase>
 </div>

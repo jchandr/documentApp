@@ -1,18 +1,20 @@
 <div class="showcase-container">
   <div class="row">
-    <div *ngFor="let doc of documents" class="card col-md-3 col-sm-6">
-      <div class="row">
-        <div class="col">
-          <img class="card-img" style="height: 15em" src="https://ucarecdn.com/c2ba159b-c368-47e5-9b87-01d451bfaecf~3/nth/0/" alt="Card image cap">
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <h5 class="card-title">{{doc.name}}</h5>
-            <p class="card-text">{{doc.description}}</p>
-            <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
-          </div>
-        </div>
+    <div *ngFor="let doc of documents" class="card col-sm-6 col-md-3 col-lg-3">
+      <img class="card-img-top"
+      src="{{doc.imgs[0].url}}"
+      alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{doc.name}}</h5>
+        <p class="card-text">{{doc.description}}</p>
       </div>
+      <button type="button" class="btn btn-secondary" (click)="handleDelete(doc._id)">
+      <i class="material-icons">delete</i>
+      </button>
+      <button type="button" class="btn btn-secondary">
+      <i class="material-icons">edit</i>
+      </button>
     </div>
   </div>
 </div>
+
