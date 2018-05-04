@@ -1,3 +1,7 @@
 /* You can add global bootstrap to this file, and also import other style files */
 @import "bootstrap/bootstrap-material-design.min.css";
 @import "bootstrap/material-icons.min.css";
+
+body {
+  background: whitesmoke;
+}

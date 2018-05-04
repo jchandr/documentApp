@@ -1,0 +1,16 @@
+.card-title, .card-text{
+  text-align: left;
+  overflow: -webkit-marquee;
+}
+
+.card {
+  margin: 1em;
+}
+
+.card-img {
+  width: 4em;
+}
+
+.showcase-container {
+  margin: 1em;
+}

@@ -1,10 +1,18 @@
-<div class="container">
-  <div *ngFor="let doc of documents" class="card" style="width: 18rem;">
-    <img class="card-img-top" style="height: 12em" src="https://ucarecdn.com/c2ba159b-c368-47e5-9b87-01d451bfaecf~3/nth/0/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{doc.name}}</h5>
-      <p class="card-text">{{doc.description}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="showcase-container">
+  <div class="row">
+    <div *ngFor="let doc of documents" class="card col-md-3 col-sm-6">
+      <div class="row">
+        <div class="col">
+          <img class="card-img" style="height: 15em" src="https://ucarecdn.com/c2ba159b-c368-47e5-9b87-01d451bfaecf~3/nth/0/" alt="Card image cap">
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">{{doc.name}}</h5>
+            <p class="card-text">{{doc.description}}</p>
+            <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

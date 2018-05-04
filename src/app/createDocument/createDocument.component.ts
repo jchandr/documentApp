@@ -42,7 +42,7 @@ export class CreateDocumentComponent {
     }
   }
 
-  handleSave() {
+  handleSave($scope) {
     this.http.request(
       'POST',
       'https://alpha-dataflownode.zerionsoftware.com/code_assignment/records',
@@ -56,12 +56,15 @@ export class CreateDocumentComponent {
           'imgs': this.images
         }
       }
-    ).subscribe(() => alert('Document Created Successfully'),
+    ).subscribe(() => {
+        alert('Document Created Successfully');
+        $scope.emit('documentCreated');
+      },
       ({error}) => {
         if (error.error !== undefined) {
           alert(error.error);
         } else {
-          alert('There was a Unknown Problem, Try again later !');
+          alert('There was an Unknown Problem, Try again later !');
         }
       });
     this.handleClose();
