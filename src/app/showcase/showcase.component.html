@@ -1,0 +1,20 @@
+<div class="showcase-container">
+  <div class="row">
+    <div *ngFor="let doc of documents" class="card col-sm-6 col-md-3 col-lg-3">
+      <img class="card-img-top"
+      src="{{doc.imgs[0].url}}"
+      alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{doc.name}}</h5>
+        <p class="card-text">{{doc.description}}</p>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="handleDelete(doc._id)">
+      <i class="material-icons">delete</i>
+      </button>
+      <button type="button" class="btn btn-secondary">
+      <i class="material-icons">edit</i>
+      </button>
+    </div>
+  </div>
+</div>
+
